@@ -30,7 +30,7 @@ async function fetchWeather(city) {
 // Function to change background dynamically based on weather condition
 
 function changeBackground(condition) {
-    let imageUrl = "";
+    let imageUrl = "images/default.jpeg";
 
     if (condition.includes("clear sky")) {
         imageUrl = "images/clearsky.jpg"; // Clear blue sky
@@ -52,9 +52,7 @@ function changeBackground(condition) {
         imageUrl = "images/snow.jpg"; // Snowy background
     } else if (condition.includes("mist") || condition.includes("fog") || condition.includes("haze")) {
         imageUrl = "images/fog.jpg"; // Mist or fog
-    } else {
-        imageUrl = "images/default.jpg"; // Default fallback image
-    }
+    } 
 
     document.body.style.background = `url('${imageUrl}') no-repeat center center/cover`;
 }
